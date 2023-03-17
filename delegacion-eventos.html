@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <title>Eventos</title>
+    <style>
+        .eventos-flujo div{
+            padding: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .uno{
+            background-color: rgb(158, 29, 201);
+        }
+        .dos{
+            background-color: rgb(141, 93, 223);
+        }
+        .tres{
+            background-color: rgb(220, 76, 122);
+        }
+        /* BOTON VOLVER */
+        .cta {
+            position: fixed;
+            margin: auto;
+            padding: 12px 18px;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            top: 50%;
+            right: 1%;
+            text-decoration: none;
+        }
+
+        .cta:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 50px;
+            background: #ffea47;
+            width: 45px;
+            height: 45px;
+            transition: all 0.3s ease;
+        }
+
+        .cta span {
+            position: relative;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: black;
+        }
+
+        .cta svg {
+            position: relative;
+            top: 0;
+            margin-left: 10px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: black;
+            stroke-width: 2;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+        .cta:hover{
+            background: none;
+            text-decoration: none;
+        }
+        .cta:hover:before {
+            width: 100%;
+            background: #ffea47;
+        }
+
+        .cta:hover svg {
+            transform: translateX(0);
+        }
+
+        .cta:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos en JS</h1>
+    <h2>Manejadores de Evento</h2>
+    <button onclick="holaMundo()"> Evento con atributo HTML</button>
+
+    <br><br>
+    <button id="evento-semantico">Evento semantico</button>
+    <br><br>
+    <button id="evento-multiple">Evento con Manejador multiple</button>
+    <br><br>
+    <button id="evento-params">Eventos con parámetros</button>
+    <br><br>
+    <button id="event-remove">Remover eventos </button>
+    <br><br>
+    <h2>Flujo de Eventos</h2>
+    <p>El flujo de eventos se refiere a la propagación que tienen los eventos en el árbol del DOM, por defecto esta propagacion es de adentro hacia afuera (BURBUJA), pero tambien se puede hacer que la propagación sea de afuera hacia adentro</p>
+    <section class="eventos-flujo">
+        <div class="uno">
+            1
+            <div class="dos">
+                2
+                <div class="tres">
+                    3
+                    <a href="https://youtube.com" target="_blank" rel="noopener">Youtube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h2>BOM propiedades y eventos</h2>
+
+    <h3>Métodos</h3>
+    <button id="abrir-ventana">Abrir Ventana</button>
+    <br><br>
+    <button id="cerrar-ventana">Cerrar Ventana</button>
+    <br><br>
+    <button id="imprimir-ventana">Imprimir Ventana</button>
+    <a class="cta" href="./index.html">
+        <svg viewBox="0 0 13 10" height="10px" width="15px">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="5 1 1 5 5 9"></polyline>
+        </svg>
+        <span>Volver</span>
+    </a>
+    <br><br>
+    <script src="js/delegacion-elementos.js"></script>
+</body>
+</html>
